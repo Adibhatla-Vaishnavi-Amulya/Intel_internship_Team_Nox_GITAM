@@ -1,0 +1,22 @@
+Model: Mistral-7b-Instruct-v0.1-int8-ov
+Model loading time: 3.87 seconds
+Disk space usage: 6.79 GB
+
+Prompt: hi hello
+Response: Hello! How can I assist you today?
+Response time: 7.55 seconds
+Throughput: 2.91 tokens/second
+Memory usage: 14195.85 MB
+Response word count: 7
+
+Prompt: tell me how to make coffee in exactly 30 words
+Response: 1. Boil water.
+2. Grind coffee beans.
+3. Add ground coffee to a filter in a coffee maker.
+4. Pour hot water over the coffee grounds.
+5. Enjoy your freshly brewed coffee!
+Response time: 14.56 seconds
+Throughput: 5.01 tokens/second
+Memory usage: 14209.69 MB
+Response word count: 32
+
