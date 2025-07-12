@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Dashboard.css') }}">
+</head>
+<body>
+    <div class="main-container">
+        <header>
+            <h1>Classroom Assistant</h1>
+        </header>
+        <div class="role-cards">
+            <a href="{{ url_for('login') }}?role=student" class="card-link">
+                <div class="role-card">
+                    <img src="{{ url_for('static', filename='Images/Student.png') }}" class="role-icon-img">
+                    <div class="role-title">Student</div>
+                </div>
+            </a>
+            <a href="{{ url_for('login') }}?role=teacher" class="card-link">
+                <div class="role-card">
+                    <img src="{{ url_for('static', filename='Images/Teacher.png') }}" class="role-icon-img">
+                    <div class="role-title">Teacher</div>
+                </div>
+            </a>
+            <a href="{{ url_for('login') }}?role=admin" class="card-link">
+                <div class="role-card">
+                    <img src="{{ url_for('static', filename='Images/Admin.png') }}" class="role-icon-img">
+                    <div class="role-title">Admin</div>
+                </div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

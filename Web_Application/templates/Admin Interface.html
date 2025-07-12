@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Admin Interface.css') }}">
+</head>
+<body>
+    <div class="admin-container">
+        <div class="admin-header">
+            <div class="admin-greeting">
+                Hello, <span id="adminName">{{ name or 'Admin' }}</span>
+            </div>
+            <button class="power-btn" id="logoutBtn" title="Logout">
+                <svg width="32" height="32" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                    <path d="M12 7V13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </div>
+        <div class="admin-role-cards">
+            <div class="admin-role-card" onclick="viewProfile()">
+                <img src="{{ url_for('static', filename='Images/Profile.png') }}" class="admin-role-icon" alt="Profile">
+                <div class="admin-role-title">My Profile</div>
+            </div>
+            <div class="admin-role-card" onclick="viewCSVFiles()">
+                <img src="{{ url_for('static', filename='Images/Database.png') }}" class="admin-role-icon" alt="Database">
+                <div class="admin-role-title">View CSV Files</div>
+            </div>
+            <!-- Announcements card removed -->
+            <div class="admin-role-card" onclick="changePassword()">
+                <img src="{{ url_for('static', filename='Images/Reset Password.png') }}" class="admin-role-icon" alt="Reset Password">
+                <div class="admin-role-title">Change Password</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full-page Profile Overlay -->
+    <div id="profileOverlay" class="profile-overlay">
+      <div class="profile-overlay-content">
+        <span class="close-profile" id="closeProfile">&times;</span>
+        <div class="profile-image-container">
+          <img src="{{ url_for('static', filename='Images/Profile Picture.png') }}" class="profile-picture" alt="Profile Picture">
+        </div>
+        <div id="profile-details"></div>
+      </div>
+    </div>
+
+    <!-- CSV Viewer Overlay -->
+    <div id="csvOverlay" class="csv-overlay">
+      <div class="csv-overlay-content">
+        <span class="close-csv" id="closeCsv">&times;</span>
+        <h2>View CSV Files</h2>
+        <div id="csv-file-list"></div>
+        <div id="csv-table-container"></div>
+      </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='Admin Interface.js') }}"></script>
+</body>
+</html>
+

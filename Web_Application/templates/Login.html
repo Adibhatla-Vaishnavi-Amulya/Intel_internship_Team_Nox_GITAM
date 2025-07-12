@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Login.css') }}">
+</head>
+<body>
+    <button class="instructions-btn" id="openInstructions" title="Show Instructions">&#9432;</button>
+    <div class="instructions-dialog" id="instructionsDialog">
+        <div class="instructions-content">
+            <span class="close-instructions" id="closeInstructions">&times;</span>
+            <h3>Instructions</h3>
+            <ul>
+                <li>Enter your username and password to log in.</li>
+                <li>If you forgot your password, click "Forgot Password?"</li>
+                <li>To create a new account, click "Sign Up".</li>
+            </ul>
+        </div>
+    </div>
+    <div class="login-container">
+        <h2 id="login-heading">Login</h2>
+        <form>
+            <input type="text" id="username" class="login-input" placeholder="Username" required>
+            <div class="password-wrapper">
+                <input type="password" id="password" class="login-input" placeholder="Password" required>
+                <span class="toggle-password" id="togglePassword">&#128065;</span>
+            </div>
+            <button type="submit" class="login-button">Login</button>
+        </form>
+        <div class="login-links">
+            <a href="{{ url_for('forgot_password') }}" id="forgot-link">Forgot Password?</a>
+            <a href="{{ url_for('signup') }}" id="signup-link">Sign Up</a>
+        </div>
+        <!-- Add this for inline messages -->
+        <div id="login-message"></div>
+    </div>
+    <script src="{{ url_for('static', filename='Login.js') }}"></script>
+</body>
+</html>
+

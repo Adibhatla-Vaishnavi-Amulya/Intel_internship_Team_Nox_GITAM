@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+body 
+{
+   margin: 0;
+   padding: 0;
+   display: flex;  
+   min-height: 100vh;
+   align-items: center;
+   background: #0a0e1a;
+   justify-content: center;
+   font-family: 'Orbitron', Arial, sans-serif;  
+}
+.admin-container 
+{
+    width: 100%;
+    max-width: 1500px;
+    padding: 40px 20px;
+    position: relative;
+}
+.admin-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; 
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 32px 40px 0 40px; 
+    box-sizing: border-box;
+    z-index: 100;
+   
+}
+
+.admin-greeting {
+    color: #4ef0fc;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    text-shadow: 0 0 5px #4ef0fc, 0 0 5px #0ff;
+    font-family: 'Orbitron', Arial, sans-serif;
+    margin: 0;
+}
+
+#adminName {
+    color:  #4ef0fc;
+    text-shadow: 0 0 5px #4ef0fc, 0 0 5px #0ff;
+}
+
+.power-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 6px;
+    border-radius: 50%;
+    transition: color 0.2s;
+    color: #4ef0fc;
+}
+
+.power-btn svg {
+    display: block;
+    fill: none;
+    stroke: currentColor;
+}
+
+.power-btn:hover {
+    color: #00c8ff;
+}
+
+.admin-role-cards {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 120px; /* To avoid overlap with header */
+}
+
+.admin-role-card {
+    width: 250px;
+    height: 350px;
+    border-radius: 18px;
+    background: rgba(10, 14, 26, 0.7);
+    border: 2px solid #4ef0fc;
+    box-shadow: 0 0 24px 2px #4ef0fc, 0 0 2px #0ff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    cursor: pointer;
+}
+
+.admin-role-card:hover {
+    transform: scale(1.04) translateY(-8px);
+    box-shadow: 0 0 40px 8px #4ef0fc, 0 0 48px #0ff;
+    border-color: #00c8ff;
+}
+
+.admin-role-icon {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 24px;
+    object-fit: cover;
+}
+
+.admin-role-title {
+    font-weight: 600;
+    color: #4ef0fc;
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+    text-shadow: 0 0 8px #4ef0fc;
+    text-align: center;
+}
+
+@media (max-width: 900px) {
+    .admin-role-cards {
+        flex-direction: column;
+        gap: 32px;
+        align-items: center;
+    }
+    .admin-container {
+        padding: 20px 5px;
+    }
+    .admin-header {
+        padding: 16px 10px 0 10px;
+    }
+}
+/* Profile Overlay Styles */
+.profile-overlay {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0; top: 0; right: 0; bottom: 0;
+    background: rgba(10, 14, 26, 0.97);
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+.profile-overlay.active {
+    display: flex;
+}
+.profile-overlay-content {
+    background: #181c2a;
+    color: #4ef0fc;
+    border-radius: 18px;
+    padding: 48px 36px 36px 36px;
+    min-width: 380px;
+    max-width: 95vw;
+    max-height: 90vh;
+    position: relative;
+    box-shadow: 0 0 24px 2px #4ef0fc;
+    text-align: left;
+    overflow-y: auto;
+    border: 4px solid #4ef0fc;      
+}
+.close-profile {
+    position: absolute;
+    top: 18px; right: 24px;
+    color: #4ef0fc;
+    font-size: 2.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+    z-index: 100;
+}
+.close-profile:hover {
+    color: #00c8ff;
+}
+.profile-image-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+.profile-picture {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #4ef0fc;
+    box-shadow: 0 0 12px #4ef0fc;
+}
+#profile-details {
+    margin-top: 10px;
+    font-size: 1.15rem;
+}
+#profile-details .profile-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 14px;
+    font-family: 'Orbitron', Arial, sans-serif;
+}
+#profile-details .profile-key {
+    font-weight: 600;
+    margin-right: 18px;
+    color: #00c8ff;
+}
+#profile-details .profile-value {
+    color: #ffffff;
+    word-break: break-all;
+}
+/* CSV Overlay Styles */
+.csv-overlay {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0; top: 0; right: 0; bottom: 0;
+    background: rgba(10, 14, 26, 0.97);
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+.csv-overlay.active {
+    display: flex;
+}
+.csv-overlay-content {
+    background: #181c2a;
+    color: #4ef0fc;
+    border-radius: 18px;
+    padding: 40px 32px 32px 32px;
+    min-width: 500px;
+    max-width: 95vw;
+    max-height: 90vh;
+    position: relative;
+    border: 4px solid #4ef0fc;
+    box-shadow: 0 0 40px 8px #4ef0fc, 0 0 48px #0ff;
+    text-align: left;
+    overflow-y: auto;
+}
+.close-csv {
+    position: absolute;
+    top: 18px; right: 24px;
+    color: #4ef0fc;
+    font-size: 2.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+    z-index: 100;
+}
+.close-csv:hover {
+    color: #00c8ff;
+}
+.csv-file-btn {
+    background: #0a0e1a;
+    color: #4ef0fc;
+    border: 2px solid #4ef0fc;
+    border-radius: 8px;
+    padding: 6px 16px;
+    margin: 6px 0;
+    cursor: pointer;
+    font-family: 'Orbitron', Arial, sans-serif;
+    transition: background 0.2s, color 0.2s;
+}
+.csv-file-btn:hover {
+    background: #00c8ff;
+    color: #0a0e1a;
+}
+#csv-file-list ul {
+    list-style: none;
+    padding-left: 0;
+}
+#csv-file-list li {
+    margin-bottom: 8px;
+}
+.csv-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 18px;
+}
+.csv-table th, .csv-table td {
+    border: 1px solid #4ef0fc;
+    padding: 8px 12px;
+    text-align: left;
+}
+.csv-table th {
+    background: #0a0e1a;
+    color: #4ef0fc;
+}
+.csv-table tr:nth-child(even) {
+    background: #22263a;
+}

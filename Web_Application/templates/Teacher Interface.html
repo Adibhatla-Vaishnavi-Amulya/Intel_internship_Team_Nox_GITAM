@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teacher Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Teacher Interface.css') }}">
+</head>
+<body>
+    <div class="teacher-container">
+        <div class="teacher-header">
+            <div class="teacher-greeting">
+                Hello, <span id="teacherName">{{ name or 'Teacher' }}</span>
+            </div>
+            <button class="power-btn" id="logoutBtn" title="Logout">
+                <svg width="32" height="32" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                    <path d="M12 7V13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </div>
+        <div class="teacher-role-cards">
+            <div class="teacher-role-card" onclick="viewProfile()">
+                <img src="{{ url_for('static', filename='Images/Profile.png') }}" class="teacher-role-icon" alt="Profile">
+                <div class="teacher-role-title">My Profile</div>
+            </div>
+            <div class="teacher-role-card" onclick="viewCourses()">
+                <img src="{{ url_for('static', filename='Images/Courses.png') }}" class="teacher-role-icon" alt="Courses">
+                <div class="teacher-role-title">Courses</div>
+            </div>
+            <div class="teacher-role-card" onclick="changePassword()">
+                <img src="{{ url_for('static', filename='Images/Reset Password.png') }}" class="teacher-role-icon" alt="Reset Password">
+                <div class="teacher-role-title">Change Password</div>
+            </div>
+        </div>
+        <!-- Courses Section -->
+        <div id="courses-section" style="display:none; margin-top:40px;">
+            <h2>Manage My Courses</h2>
+            <label for="subject-dropdown">Select Subject:</label>
+            <select id="subject-dropdown"></select>
+            <div id="upload-modules-container"></div>
+            <div id="uploaded-files-list"></div>
+            <button id="monitor-progress-btn" class="monitor-btn">Monitor Student Progress</button>
+            <div id="student-progress-table" style="margin-top:24px;"></div>
+        </div>
+    </div>
+    <!-- Profile Overlay -->
+    <div id="profileOverlay" class="profile-overlay">
+      <div class="profile-overlay-content">
+        <span class="close-profile" id="closeProfile">&times;</span>
+        <div class="profile-image-container">
+          <img src="{{ url_for('static', filename='Images/Profile Picture.png') }}" class="profile-picture" alt="Profile Picture">
+        </div>
+        <div id="profile-details"></div>
+      </div>
+    </div>
+    <script src="{{ url_for('static', filename='Teacher Interface.js') }}"></script>
+</body>
+</html>

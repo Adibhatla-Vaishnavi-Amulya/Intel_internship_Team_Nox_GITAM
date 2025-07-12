@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+body 
+{
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background: #0a0e1a;
+    justify-content: center;
+    font-family: 'Orbitron', Arial, sans-serif;
+}
+.login-container 
+{
+    width: 350px;
+    color: #4ef0fc;
+    text-align: center;
+    padding: 40px 30px;
+    border-radius: 18px;
+    border: 2px solid #4ef0fc;
+    box-shadow: 0 0 24px 2px #4ef0fc;
+    background: rgba(10, 14, 26, 0.85);
+}
+.login-container h2 
+{
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-shadow: 0 0 5px #4ef0fc;
+    font-family: 'Orbitron', Arial, sans-serif;
+}
+form 
+{
+    width: 100%;
+}
+.login-input,
+.login-button,
+.password-wrapper 
+{
+    width: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+.login-input 
+{
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    color: #4ef0fc;
+    border-radius: 8px;
+    padding: 12px 15px;
+    margin-bottom: 18px; 
+    background: #181c2a;
+    font-family: 'Times New Roman', Times, serif;
+}
+.login-input::placeholder 
+{
+    opacity: 1;  
+    color: #b0b0b0;  
+    font-family: 'Orbitron', Arial, sans-serif;  
+}
+.password-wrapper 
+{
+    position: relative;
+    margin-bottom: 18px; 
+}
+.toggle-password 
+{
+    top: 50%;
+    right: 12px;
+    cursor: pointer;
+    color: #4ef0fc;
+    font-size: 1.2rem;
+    user-select: none;
+    position: absolute;
+    transition: color 0.2s;
+    transform: translateY(-50%);
+}
+.toggle-password:hover 
+{
+    color: #00c8ff;
+}
+.login-button 
+{
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    color: #0a0e1a;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    padding: 12px 15px;
+    letter-spacing: 1px;
+    margin-bottom: 18px; 
+    background: #4ef0fc;
+    text-shadow: 0 0 6px #4ef0fc;
+    transition: background 0.3s ease;
+    font-family: 'Orbitron', Arial, sans-serif;  
+}
+.login-button:hover 
+{
+    background: #00c8ff;
+}
+.login-links 
+{
+    display: flex;
+    margin-top: 40px; 
+    font-size: 0.9rem;
+    justify-content: space-between;
+}
+.login-links a 
+{
+    color: #4ef0fc;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    text-shadow: 0 0 4px #4ef0fc;
+    font-family: 'Orbitron', Arial, sans-serif;
+}
+.login-links a:hover 
+{
+    color: #00c8ff;
+}
+.instructions-btn 
+{
+    top: 24px;
+    right: 32px;
+    border: none;
+    outline: none;
+    z-index: 1100;
+    position: fixed;
+    font-size: 2rem;
+    cursor: pointer;
+    background: none;
+    color: #4ef0fc;
+    transition: color 0.2s;
+    font-family: 'Orbitron', Arial, sans-serif; 
+}
+.instructions-btn:hover 
+{
+    color: #00c8ff;
+}
+.instructions-dialog
+{
+    display: none;
+    z-index: 1200;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    left: 0; top: 0; right: 0; bottom: 0;
+    background: rgba(10, 14, 26, 0.85);
+}
+.instructions-dialog.active
+{
+    display: flex;
+}
+.instructions-content 
+{
+    max-width: 90vw;
+    min-width: 320px;
+    color: #4ef0fc;
+    text-align: left;
+    position: relative;
+    border-radius: 12px;
+    background: #181c2a;
+    border: 2px solid #4ef0fc;
+    padding: 32px 24px 24px 24px;
+    box-shadow: 0 0 24px 2px #4ef0fc;
+    font-family: 'Orbitron', Arial, sans-serif;
+}
+.instructions-content h3 
+{
+    margin-top: 0;
+    font-size: 1.3rem;
+    text-align: center;
+    margin-bottom: 18px;
+    text-shadow: 0 0 5px #4ef0fc;
+}
+.instructions-content ul 
+{
+    margin: 0;
+    font-size: 1rem;
+    padding-left: 18px;
+}
+.close-instructions 
+{
+    cursor: pointer;
+    color: #4ef0fc;
+    font-weight: bold;
+    font-size: 1.5rem;
+    position: absolute;
+    transition: color 0.2s;
+    top: 10px; right: 14px;
+}
+.close-instructions:hover 
+{
+    color: #00c8ff;
+}
+#login-message {
+    font-size: 1rem;
+    margin-top: 16px;
+    min-height: 20px;
+    text-align: center;
+}
+#login-message.error {
+    color: #ff7373;
+}
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SignUp</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='SignUp.css') }}">
+</head>
+<body>
+    <button class="instructions-btn" id="openInstructions" title="Show Instructions">&#9432;</button>
+    <div class="instructions-dialog" id="instructionsDialog">
+        <div class="instructions-content">
+            <span class="close-instructions" id="closeInstructions">&times;</span>
+            <h3>Instructions</h3>
+            <ul>
+                <li>Fill all fields to create a new account.</li>
+                <li>Use a strong password.</li>
+                <li>If you already have an account, go back to Login.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="signup-container">
+        <h2 id="signup-heading">Sign Up</h2>
+        <form id="signup-form">
+            <input type="text" id="signup-username" class="signup-input" placeholder="Username" required>
+            <input type="email" id="signup-email" class="signup-input" placeholder="Email" required>
+            <div class="password-wrapper">
+                <input type="password" id="signup-password" class="signup-input" placeholder="Password" required>
+                <span class="toggle-password" id="toggleSignupPassword">&#128065;</span>
+            </div>
+            <div class="password-wrapper">
+                <input type="password" id="signup-confirm-password" class="signup-input" placeholder="Confirm Password" required>
+                <span class="toggle-password" id="toggleSignupConfirmPassword">&#128065;</span>
+            </div>
+            <button type="submit" class="signup-button">Sign Up</button>
+        </form>
+        <div class="signup-links">
+            <a href="{{ url_for('login') }}" id="back-login-link">Back to Login</a>
+        </div>
+        <div id="signup-message"></div>
+    </div>
+    <script src="{{ url_for('static', filename='SignUp.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,445 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+body {
+   margin: 0;
+   padding: 0;
+   display: flex;  
+   min-height: 100vh;
+   align-items: center;
+   background: #0a0e1a;
+   justify-content: center;
+   font-family: 'Orbitron', Arial, sans-serif;  
+}
+.student-container {
+    width: 100%;
+    max-width: 1600px;
+    padding: 40px 20px;
+    position: relative;
+}
+.student-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; 
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 32px 40px 0 40px; 
+    box-sizing: border-box;
+    z-index: 100;
+}
+.student-greeting {
+    color: #4ef0fc;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    text-shadow: 0 0 5px #4ef0fc, 0 0 5px #0ff;
+    font-family: 'Orbitron', Arial, sans-serif;
+    margin: 0;
+}
+#studentName {
+    color:  #4ef0fc;
+    text-shadow: 0 0 5px #4ef0fc, 0 0 5px #0ff;
+}
+.power-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 6px;
+    border-radius: 50%;
+    transition: color 0.2s;
+    color: #4ef0fc;
+}
+.power-btn svg {
+    display: block;
+    fill: none;
+    stroke: currentColor;
+}
+.power-btn:hover {
+    color: #00c8ff;
+}
+.student-role-cards {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 120px; 
+}
+.student-role-card {
+    width: 250px;
+    height: 350px;
+    border-radius: 18px;
+    background: rgba(10, 14, 26, 0.7);
+    border: 2px solid #4ef0fc;
+    box-shadow: 0 0 24px 2px #4ef0fc, 0 0 2px #0ff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    cursor: pointer;
+}
+.student-role-card:hover {
+    transform: scale(1.04) translateY(-8px);
+    box-shadow: 0 0 40px 8px #4ef0fc, 0 0 48px #0ff;
+    border-color: #00c8ff;
+}
+.student-role-icon {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 24px;
+    object-fit: cover;
+}
+.student-role-title {
+    font-weight: 600;
+    color: #4ef0fc;
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+    text-shadow: 0 0 8px #4ef0fc;
+    text-align: center;
+}
+@media (max-width: 900px) {
+    .student-role-cards {
+        flex-direction: column;
+        gap: 32px;
+        align-items: center;
+    }
+    .student-container {
+        padding: 20px 5px;
+    }
+    .student-header {
+        padding: 16px 10px 0 10px;
+    }
+}
+.profile-overlay {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0; top: 0; right: 0; bottom: 0;
+    background: rgba(10, 14, 26, 0.97);
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+.profile-overlay.active {
+    display: flex;
+}
+.profile-overlay-content {
+    background: #181c2a;
+    color: #4ef0fc;
+    border-radius: 18px;
+    padding: 48px 36px 36px 36px;
+    min-width: 380px;
+    max-width: 95vw;
+    max-height: 90vh;
+    position: relative;
+    box-shadow: 0 0 24px 2px #4ef0fc;
+    text-align: left;
+    overflow-y: auto;
+    border: 4px solid #4ef0fc;   
+}
+.close-profile {
+    position: absolute;
+    top: 18px; right: 24px;
+    color: #4ef0fc;
+    font-size: 2.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+    z-index: 100;
+}
+.close-profile:hover {
+    color: #00c8ff;
+}
+.profile-image-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+.profile-picture {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #4ef0fc;
+    box-shadow: 0 0 12px #4ef0fc;
+}
+#profile-details {
+    margin-top: 10px;
+    font-size: 1.15rem;
+}
+#profile-details .profile-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 14px;
+    font-family: 'Orbitron', Arial, sans-serif;
+}
+#profile-details .profile-key {
+    font-weight: 600;
+    margin-right: 18px;
+    color: #00c8ff;
+}
+#profile-details .profile-value {
+    color: #ffffff;
+    word-break: break-all;
+}  
+#courses-section {
+    margin-top: 40px;
+    background: rgba(10, 14, 26, 0.85);
+    border: 2px solid #4ef0fc;
+    border-radius: 18px;
+    padding: 30px 24px;
+    box-shadow: 0 0 24px 2px #4ef0fc;
+    color: #4ef0fc;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#courses-section label {
+    color: #00c8ff;
+    font-weight: 600;
+    margin-right: 12px;
+    font-family: 'Orbitron', Arial, sans-serif;
+}
+
+#subject-dropdown {
+    background: #181c2a;
+    color: #4ef0fc;
+    border: 1px solid #00c8ff;
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 1rem;
+    font-family: 'Orbitron', Arial, sans-serif;
+    margin-bottom: 20px;
+}
+
+.module-block {
+    background: rgba(24,28,42,0.85);
+    border: 1px solid #00c8ff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.module-title {
+    color: #00c8ff;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.module-actions {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.module-action-btn {
+    background: #4ef0fc;
+    color: #0a0e1a;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 16px;
+    cursor: pointer;
+    font-family: 'Orbitron', Arial, sans-serif;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.module-action-btn:hover {
+    background: #00c8ff;
+}
+
+.monitor-btn {
+    margin-top: 18px;
+    background: #00c8ff;
+    color: #0a0e1a;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 22px;
+    font-size: 1.1rem;
+    font-family: 'Orbitron', Arial, sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+    box-shadow: 0 0 8px #00c8ff;
+}
+
+.monitor-btn:hover {
+    background: #4ef0fc;
+    color: #0a0e1a;
+}
+
+#student-progress-table {
+    margin-top: 18px;
+    overflow-x: auto;
+}
+
+#student-progress-table table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #4ef0fc;
+    background: #181c2a;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#student-progress-table th,
+#student-progress-table td {
+    border: 1px solid #00c8ff;
+    padding: 8px 14px;
+    text-align: left;
+    font-size: 1rem;
+}
+
+#student-progress-table th {
+    background: #0a0e1a;
+    color: #00c8ff;
+    font-weight: 700;
+}
+
+#student-progress-table td {
+    color: #fff;
+}
+
+@media (max-width: 900px) {
+    #courses-section {
+        padding: 18px 5px;
+        max-width: 100vw;
+    }
+}
+
+
+
+.chatbot-modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(10, 14, 26, 0.97);
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+.chatbot-modal.active {
+    display: flex;
+}
+.chatbot-modal-content {
+    background: #181c2a;
+    color: #4ef0fc;
+    border-radius: 18px;
+    padding: 32px 24px;
+    min-width: 380px;
+    max-width: 95vw;
+    max-height: 90vh;
+    position: relative;
+    box-shadow: 0 0 24px 2px #4ef0fc;
+    text-align: left;
+    overflow-y: auto;
+    border: 4px solid #4ef0fc;
+}
+.close-chatbot {
+    position: absolute;
+    top: 12px;
+    right: 24px;
+    color: #4ef0fc;
+    font-size: 2.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+    z-index: 100;
+}
+.close-chatbot:hover {
+    color: #00c8ff;
+}
+#chatbot-history {
+    background: #22263a;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 16px;
+    min-height: 150px;
+    max-height: 300px;
+    overflow-y: auto; /* Add scrolling for long conversations */
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+/* New styles for input and buttons */
+#chatbot-input {
+    width: 70%;
+    padding: 8px 12px;
+    margin-right: 10px;
+    background: #22263a;
+    border: 1px solid #00c8ff;
+    border-radius: 6px;
+    color: #4ef0fc;
+    font-family: 'Orbitron', Arial, sans-serif;
+    font-size: 1rem;
+}
+#chatbot-word-limit {
+    padding: 8px 12px;
+    background: #22263a;
+    border: 1px solid #00c8ff;
+    border-radius: 6px;
+    color: #4ef0fc;
+    font-family: 'Orbitron', Arial, sans-serif;
+    margin-right: 10px;
+    font-size: 1rem;
+}
+#chatbot-send-btn, #chatbot-complete-btn {
+    background: #4ef0fc;
+    color: #0a0e1a;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-family: 'Orbitron', Arial, sans-serif;
+    font-weight: 600;
+    margin-right: 10px;
+}
+#chatbot-send-btn:hover, #chatbot-complete-btn:hover {
+    background: #00c8ff;
+}
+#chatbot-complete-btn {
+    background: #2bff7e; /* Distinct color for Done Studying */
+}
+#chatbot-complete-btn:hover {
+    background: #1ad65e;
+}
+
+/* Ensure proper alignment of input and buttons */
+.chatbot-input-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .chatbot-modal-content {
+        padding: 20px 12px;
+        min-width: 300px;
+    }
+    #chatbot-input {
+        width: 60%;
+    }
+    #chatbot-send-btn, #chatbot-complete-btn {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+    #chatbot-history {
+        min-height: 100px;
+        max-height: 200px;
+    }
+}
